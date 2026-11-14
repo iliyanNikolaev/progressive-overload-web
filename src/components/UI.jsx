@@ -1,0 +1,6 @@
+import { Activity, Dumbbell, History, Home, LogOut, Plus, Search, Trash2, Pencil, X, Check, ChevronRight, ArrowLeft, Play, Clock3, Layers3, TrendingUp, CircleHelp, Settings2, ChevronDown, Sun, Moon } from 'lucide-react'
+export { Activity, Dumbbell, History, Home, LogOut, Plus, Trash2, Pencil, X, Search, Check, ChevronRight, ArrowLeft, Play, Clock3, Layers3, TrendingUp, CircleHelp, Settings2, ChevronDown, Sun, Moon }
+export function Loader() { return <div className="loading"><span className="spinner"/> Зареждане…</div> }
+export function ErrorMessage({ error }) { return error ? <div className="alert error">{error.message || error}</div> : null }
+export function Empty({ icon: Icon = Dumbbell, title, text, action }) { return <div className="empty"><span className="empty-icon"><Icon size={22}/></span><h3>{title}</h3><p>{text}</p>{action}</div> }
+export function Modal({ title, children, onClose }) { return <div className="modal-backdrop" onMouseDown={onClose}><section className="modal" onMouseDown={e=>e.stopPropagation()}><div className="modal-heading"><h2>{title}</h2><button className="icon-button" onClick={onClose} aria-label="Затвори"><X size={19}/></button></div>{children}</section></div> }
