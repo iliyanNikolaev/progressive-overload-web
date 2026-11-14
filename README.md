@@ -4,6 +4,27 @@
 
 Адаптивен дневник за силови тренировки с личен каталог от упражнения, запис на серии, предишно изпълнение, история и автоматично изчисляване на тренировъчния обем. Данните се съхраняват в Supabase и са изолирани чрез Row Level Security.
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td><img src="screenshots/IMG_3798.PNG" width="100%"></td>
+    <td><img src="screenshots/IMG_3799.PNG" width="100%"></td>
+  </tr>
+    <td><img src="screenshots/IMG_3800.PNG" width="100%"></td>
+    <td><img src="screenshots/IMG_3801.PNG" width="100%"></td>
+  <tr>
+  </tr>
+  <tr>
+    <td><img src="screenshots/IMG_3802.PNG" width="100%"></td>
+    <td><img src="screenshots/IMG_3803.PNG" width="100%"></td>
+  </tr>
+  <tr>
+    <td><img src="screenshots/IMG_3804.PNG" width="100%"></td>
+    <td><img src="screenshots/IMG_3805.PNG" width="100%"></td>
+  </tr>
+</table>
+
 ## Стек
 
 React, Vite, JavaScript, React Router DOM, Supabase Auth, Supabase PostgreSQL и CSS.
