@@ -21,6 +21,6 @@ export const removeSet = async (id) => check(await supabase.from('workout_sets')
 export const removeWorkoutExercise = async (id) => check(await supabase.from('workout_exercises').delete().eq('id', id))
 export const finishWorkout = async (id) => check(await supabase.from('workouts').update({ status: 'completed', completed_at: new Date().toISOString() }).eq('id', id).eq('status', 'active').select().single())
 export const getPreviousExercise = async (exerciseId, workoutId) => {
-  const row = check(await supabase.from('workout_exercises').select('workout_id, workout_sets(weight, reps, position), workouts!inner(status, completed_at)').eq('exercise_id', exerciseId).eq('workouts.status', 'completed').neq('workout_id', workoutId).order('completed_at', { referencedTable: 'workouts', ascending: false }).limit(1).maybeSingle())
+  const row = check(await supabase.from('workout_exercises').select('workout_id, workout_sets(weight, reps, position), workouts!inner(status, completed_at, started_at)').eq('exercise_id', exerciseId).eq('workouts.status', 'completed').neq('workout_id', workoutId).order('completed_at', { referencedTable: 'workouts', ascending: false }).order('started_at', { referencedTable: 'workouts', ascending: false }).order('workout_id', { ascending: false }).order('position', { referencedTable: 'workout_sets', ascending: true }).limit(1).maybeSingle())
   return row
 }
